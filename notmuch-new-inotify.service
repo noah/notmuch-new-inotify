@@ -1,0 +1,14 @@
+[Unit]
+Description=Service to update notmuch db when filesystem events occur.
+
+[Service]
+Type=simple
+User=noah
+Group=noah
+ExecStart=/bin/bash /home/noah/src/notmuch-new-inotify/notmuch-new-inotify.sh
+SyslogIdentifier=notmuch
+
+[Install]
+WantedBy=multi-user.target
+
+# vim:ft=systemd
